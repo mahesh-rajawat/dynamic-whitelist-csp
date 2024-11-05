@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="whitelist_csp" sortOrder="10" showInWebsite="0" showInStore="0" showInDefault="1" translate="label">
+            <label>Add CSP Whitelist</label>
+            <tab id="msr" translate="label" sortOrder="999">
+                <label>MSR Modules</label>
+            </tab>
+            <resource>MSR_WhitelistCSP::config</resource>
+            <group id="configuration" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Configuration</label>
+                <field id="enabled" type="select" sortOrder="10" showInWebsite="0" showInStore="0" showInDefault="1" translate="label">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="urls" type="text" sortOrder="10" showInWebsite="0" showInStore="0" showInDefault="1" translate="label">
+                    <label>Add URL Policies</label>
+                    <frontend_model>MSR\WhitelistCSP\Block\Adminhtml\Form\Field\Policies</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
